@@ -1,7 +1,7 @@
 # 🚀 AI PrepPulse - Your Professional AI Interview Coach
 
 <div align="center">
-  <img src="./doc_assets/dashboard_overview.png" alt="AI PrepPulse Dashboard" width="100%">
+  <img src="./doc_assets/landing_page.png" alt="AI PrepPulse Dashboard" width="100%">
   <br><br>
 
   [![Demo Video](https://img.shields.io/badge/🎥_Watch_Demo-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://drive.google.com/file/d/1aSAxpOCjASWQKolKelXjZxMw6ISJSEBm/view?usp=sharing)
@@ -52,13 +52,29 @@ graph TD
 ### 1. 🧠 Consolidated AI Analysis
 We use a sophisticated, multi-stage prompting strategy to analyze the candidate's Resume, Technical Answers, and Behavioral responses in one go. This ensures the feedback is **context-aware**—identifying gaps between what a candidate *says* they know and what their resume *shows*.
 
+<div align="center">
+  <img src="./doc_assets/assessment_question.png" width="48%" alt="Technical Assessment">
+  <img src="./doc_assets/resume_upload.png" width="48%" alt="Resume Upload">
+</div>
+
 ### 2. 📊 Professional Results Dashboard
 Gone are the complex, developer-centric metrics. Our dashboard is designed for **clarity and motivation**:
 -   **Readiness Score**: A clear 0-100 metric with status levels (Elite, Solid, Growth).
 -   **Visual Breakdowns**: Glassmorphism-styled charts and progress rings.
 -   **Plain English Explanations**: "What does this score mean?" sections for accessibility.
 
-![Detailed Feedback](./doc_assets/detailed_feedback.png)
+<div align="center">
+  <img src="./doc_assets/results_dashboard.png" width="48%" alt="Results Dashboard">
+  <img src="./doc_assets/resume_analysis.png" width="48%" alt="Resume Analysis">
+</div>
+<br>
+<div align="center">
+  <img src="./doc_assets/portfolio_assessment.png" width="100%" alt="Portfolio Assessment">
+</div>
+<br>
+<div align="center">
+  <img src="./doc_assets/improvement_plan.png" width="100%" alt="Personalized Improvement Plan">
+</div>
 
 ### 3. 📄 Instant PDF Report Generation
 Users can download a **professional, print-ready PDF report** of their assessment.
@@ -66,6 +82,8 @@ Users can download a **professional, print-ready PDF report** of their assessmen
 -   **Executive Summary**: High-level insights for quick reading.
 -   **Visuals**: Simplified charts optimized for print (A4 format).
 -   *Powered by `html2pdf.js` with a custom, hidden rendering engine.*
+
+
 
 ---
 
