@@ -11,7 +11,7 @@
   [![Gemini AI](https://img.shields.io/badge/Gemini_AI-8E75B2?style=for-the-badge&logo=google-gemini&logoColor=white)](https://deepmind.google/technologies/gemini/)
 
   <h3>Assess. Analyze. Accelerate.</h3>
-  <p>AI PrepPulse is an advanced, AI-powered platform designed to simulate high-stakes technical interviews and provide instant, professional-grade feedback.</p>
+  <p><b>AI PrepPulse</b> is the ultimate AI-powered career accelerator. It combines <b>technical mock interviews</b>, <b>resume analysis</b>, and <b>portfolio reviews</b> into a single, comprehensive readiness assessment. Powered by <b>Google Gemini 1.5 Flash</b>, it delivers instant, personalized feedback to help you land your dream job.</p>
 </div>
 
 ---
