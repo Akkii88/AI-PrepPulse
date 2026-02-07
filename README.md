@@ -134,6 +134,36 @@ Users can download a **professional, print-ready PDF report** of their assessmen
 
 ---
 
+---
+## ❓ Frequently Asked Questions (Design Decisions)
+
+### 1. Why didn't you train your own model using Python?
+**Short Answer:** We prioritized **Application Intelligence** over **Model Training**.
+**Detailed Answer:**
+*   **The Problem is "Subjective Critique," not "Classification":** Training a model from scratch to understand nuances in resume quality and coding style would require massive datasets and months of compute.
+*   **Leveraging Foundation Models:** Google's **Gemini 1.5 Flash** is already trained on billions of lines of code. Instead of reinventing the wheel, we use advanced **Prompt Engineering** to direct this massive intelligence, allowing us to build a feature-rich product in a single hackathon.
+*   **Architecture Efficiency:** By bypassing a heavy Python backend for inference, our app is **Serverless**, faster, and easier to scale.
+
+### 2. How do you ensure the AI's feedback is accurate?
+We use a **multi-shot prompting strategy** with strict JSON schema enforcement. We don't just ask "Is this good?"; we provide the AI with a rubric and specific criteria for "Elite," "Solid," and "Growth" tiers. This grounds the AI's hallucinations and ensures consistent, actionable feedback.
+
+### 3. Is my resume data safe?
+**Yes.** The parsing happens in-memory on the client (using `pdfjs-dist`) and is sent to the Gemini API only for analysis. We do **not store** your resume on any persistent database. Once the session ends, the data is wiped. This "privacy-by-design" approach makes the tool safe for quick demos.
+
+### 4. How is the "Readiness Score" calculated?
+The score is a weighted average derived from the AI's analysis of 4 pillars:
+*   **Technical Accuracy (40%)**: Correctness and optimality of code.
+*   **Communication (20%)**: Clarity and structure of explanations.
+*   **Resume Impact (25%)**: ATS compatibility and verifiable metrics.
+*   **Portfolio (15%)**: Project complexity and documentation.
+
+### 5. What is the future roadmap for AI PrepPulse?
+*   **Voice Mode:** Integrating Speech-to-Text for real-time verbal mock interviews.
+*   **Browser Extension:** Overlaying specific feedback directly on LeetCode/HackerRank problems.
+*   **Company Specifics:** Customizing the assessment rubric for specific companies (e.g., "Googleyness" or Amazon Leadership Principles).
+
+---
+
 ## 👥 Team
 -   **Ankit** - Full Stack Developer & AI Engineer
 
