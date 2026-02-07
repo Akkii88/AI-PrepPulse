@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI PrepPulse - Assessment Results</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Config -->
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {primary: "#359EFF", "primary-dark": "#5b2cb3", "background-light": "#f5f7f8", "background-dark": "#0f1923", "surface-light": "#ffffff", "surface-dark": "#1f1a2e", "border-light": "#ece8f3", "border-dark": "#2d2640", "text-main": "#130e1b", "text-muted": "#6a5095"}, fontFamily: {display: "Manrope", body: ["Noto Sans", "sans-serif"]}, borderRadius: {DEFAULT: "0.5rem", lg: "1rem", xl: "1.5rem", full: "9999px"}}}};</script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Circular Progress Animation */
+        @keyframes progress {
+            0% { stroke-dasharray: 0, 100; }
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-main dark:text-gray-100 min-h-screen flex flex-col overflow-x-hidden">
+<!-- Top Navigation -->
+<header class="sticky top-0 z-50 bg-surface-light/95 dark:bg-surface-dark/95 backdrop-blur border-b border-border-light dark:border-border-dark px-6 py-3">
+<div class="max-w-[1400px] mx-auto flex items-center justify-between">
+<div class="flex items-center gap-4 text-text-main dark:text-white">
+<div class="size-8 text-primary">
+<span class="material-symbols-outlined text-3xl">psychology_alt</span>
+</div>
+<h2 class="text-xl font-bold leading-tight tracking-[-0.015em]">AI PrepPulse</h2>
+</div>
+<div class="hidden md:flex flex-1 justify-end gap-6 items-center">
+<div class="flex gap-3">
+<button class="flex items-center justify-center rounded-xl h-10 px-5 bg-border-light hover:bg-slate-200 dark:bg-white/10 dark:hover:bg-white/20 text-text-main dark:text-white text-sm font-bold transition-colors">
+<span class="material-symbols-outlined text-lg mr-2">refresh</span>
+<span>Retake Assessment</span>
+</button>
+<button class="flex items-center justify-center rounded-xl h-10 px-5 bg-primary hover:bg-primary-dark text-white text-sm font-bold shadow-lg shadow-primary/30 transition-all transform hover:scale-105">
+<span class="material-symbols-outlined text-lg mr-2">download</span>
+<span>Download Report</span>
+</button>
+</div>
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-10 border-2 border-white dark:border-white/10 shadow-sm" data-alt="User profile picture showing a smiling professional man" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDHfWKTIjXllarIGYfXAJmZL_MAALDILWdR7rt0Qri8I7Jkkn7nqs5I5Qx3_tcvOCC2zijDAinlNZ_SzxtfdT1AdxAr73PBQ9JUJFAew8JhBWf8k0Euskf9AEZM41Eugf8qdqoIhc27KD1O3Gt19Jxw7bhb6L5efaQScp7Yp5WamiCEg_SjHRg2e6ANkUBlBu3KwTqzIH0U6yGEePqu4n9spv3j7D_Uuv5Rc-eAz-O-o0Oqb7Q5Qo0GjpPukyRkp3hhOkqN98TPGkg");'></div>
+</div>
+<!-- Mobile Menu Icon -->
+<button class="md:hidden p-2 text-text-main dark:text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 w-full max-w-[1400px] mx-auto px-4 md:px-8 py-8 flex flex-col gap-8">
+<!-- Breadcrumbs & Title -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-2 text-sm font-medium text-text-muted dark:text-gray-400">
+<a class="hover:text-primary transition-colors" href="#">Home</a>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Assessment</a>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span class="text-text-main dark:text-white">Results</span>
+</div>
+<div class="flex flex-wrap justify-between items-end gap-4">
+<div>
+<h1 class="text-3xl md:text-4xl font-black tracking-tight text-text-main dark:text-white mt-2">Assessment Results</h1>
+<p class="text-text-muted dark:text-gray-400 mt-1 text-lg">Detailed analysis of your interview readiness as of Oct 24, 2023</p>
+</div>
+<div class="flex gap-2">
+<span class="inline-flex items-center px-3 py-1 rounded-lg bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 text-sm font-bold border border-green-200 dark:border-green-800">
+<span class="material-symbols-outlined text-base mr-1 icon-filled">trending_up</span> Top 15%
+                    </span>
+<span class="inline-flex items-center px-3 py-1 rounded-lg bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-sm font-bold border border-blue-200 dark:border-blue-800">
+<span class="material-symbols-outlined text-base mr-1 icon-filled">workspace_premium</span> Verified
+                    </span>
+</div>
+</div>
+</div>
+<!-- Dashboard Grid -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-6">
+<!-- Left Column: Score & Categories (XL: span 8) -->
+<div class="xl:col-span-8 flex flex-col gap-6">
+<!-- Hero Score Section -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-2xl p-6 md:p-8 border border-border-light dark:border-border-dark shadow-sm flex flex-col md:flex-row items-center md:items-start gap-8 relative overflow-hidden group">
+<!-- Decor element -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+<!-- Circular Chart -->
+<div class="relative size-40 md:size-48 shrink-0">
+<svg class="size-full -rotate-90" viewbox="0 0 100 100">
+<!-- Background Circle -->
+<circle class="text-gray-200 dark:text-gray-700 stroke-current" cx="50" cy="50" fill="transparent" r="42" stroke-width="8"></circle>
+<!-- Progress Circle -->
+<circle class="text-primary stroke-current" cx="50" cy="50" fill="transparent" r="42" stroke-dasharray="263.89" stroke-dashoffset="73.89" stroke-linecap="round" stroke-width="8"></circle> <!-- 263.89 * (1 - 0.72) = 73.89 approx -->
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-4xl md:text-5xl font-black text-text-main dark:text-white tracking-tighter">72</span>
+<span class="text-xs font-bold text-text-muted uppercase tracking-widest mt-1">/ 100</span>
+</div>
+</div>
+<!-- Text Content -->
+<div class="flex-1 flex flex-col gap-4 text-center md:text-left z-10">
+<div>
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 font-bold text-sm mb-3 border border-orange-200 dark:border-orange-800">
+<span class="material-symbols-outlined text-lg icon-filled">verified</span>
+                                Good - Almost Ready
+                            </div>
+<h3 class="text-2xl font-bold text-text-main dark:text-white mb-2">You're on the right track!</h3>
+<p class="text-text-muted dark:text-gray-400 leading-relaxed max-w-lg">
+                                Your profile shows strong potential, particularly in your resume structure. Focusing on portfolio presentation and technical deep-dives will push you into the 'Hire Ready' zone.
+                            </p>
+</div>
+<div class="mt-2 grid grid-cols-2 sm:grid-cols-4 gap-4 w-full">
+<div class="bg-background-light dark:bg-white/5 rounded-xl p-3 text-center border border-border-light dark:border-white/10">
+<p class="text-xs text-text-muted uppercase font-bold">Percentile</p>
+<p class="text-lg font-bold text-text-main dark:text-white">Top 28%</p>
+</div>
+<div class="bg-background-light dark:bg-white/5 rounded-xl p-3 text-center border border-border-light dark:border-white/10">
+<p class="text-xs text-text-muted uppercase font-bold">Est. Level</p>
+<p class="text-lg font-bold text-text-main dark:text-white">Mid-Senior</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Category Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Resume -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl p-5 border border-border-light dark:border-border-dark shadow-sm hover:shadow-md transition-shadow relative overflow-hidden">
+<div class="absolute top-0 right-0 w-16 h-16 bg-green-500/10 rounded-bl-full -mr-2 -mt-2"></div>
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-green-100 dark:bg-green-900/40 text-green-600 dark:text-green-400 rounded-lg">
+<span class="material-symbols-outlined">description</span>
+</div>
+<span class="text-2xl font-black text-text-main dark:text-white">82</span>
+</div>
+<h4 class="font-bold text-text-main dark:text-white mb-2">Resume</h4>
+<div class="w-full bg-gray-100 dark:bg-gray-700 rounded-full h-2 mb-1">
+<div class="bg-green-500 h-2 rounded-full" style="width: 82%"></div>
+</div>
+<p class="text-xs text-green-600 dark:text-green-400 font-medium text-right">Excellent</p>
+</div>
+<!-- Communication -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl p-5 border border-border-light dark:border-border-dark shadow-sm hover:shadow-md transition-shadow relative overflow-hidden">
+<div class="absolute top-0 right-0 w-16 h-16 bg-teal-500/10 rounded-bl-full -mr-2 -mt-2"></div>
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-teal-100 dark:bg-teal-900/40 text-teal-600 dark:text-teal-400 rounded-lg">
+<span class="material-symbols-outlined">record_voice_over</span>
+</div>
+<span class="text-2xl font-black text-text-main dark:text-white">78</span>
+</div>
+<h4 class="font-bold text-text-main dark:text-white mb-2">Communication</h4>
+<div class="w-full bg-gray-100 dark:bg-gray-700 rounded-full h-2 mb-1">
+<div class="bg-teal-500 h-2 rounded-full" style="width: 78%"></div>
+</div>
+<p class="text-xs text-teal-600 dark:text-teal-400 font-medium text-right">Strong</p>
+</div>
+<!-- Technical -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl p-5 border border-border-light dark:border-border-dark shadow-sm hover:shadow-md transition-shadow relative overflow-hidden">
+<div class="absolute top-0 right-0 w-16 h-16 bg-orange-500/10 rounded-bl-full -mr-2 -mt-2"></div>
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-orange-100 dark:bg-orange-900/40 text-orange-600 dark:text-orange-400 rounded-lg">
+<span class="material-symbols-outlined">code</span>
+</div>
+<span class="text-2xl font-black text-text-main dark:text-white">65</span>
+</div>
+<h4 class="font-bold text-text-main dark:text-white mb-2">Technical</h4>
+<div class="w-full bg-gray-100 dark:bg-gray-700 rounded-full h-2 mb-1">
+<div class="bg-orange-500 h-2 rounded-full" style="width: 65%"></div>
+</div>
+<p class="text-xs text-orange-600 dark:text-orange-400 font-medium text-right">Needs Work</p>
+</div>
+<!-- Portfolio -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl p-5 border border-border-light dark:border-border-dark shadow-sm hover:shadow-md transition-shadow relative overflow-hidden">
+<div class="absolute top-0 right-0 w-16 h-16 bg-red-500/10 rounded-bl-full -mr-2 -mt-2"></div>
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-red-100 dark:bg-red-900/40 text-red-600 dark:text-red-400 rounded-lg">
+<span class="material-symbols-outlined">folder_open</span>
+</div>
+<span class="text-2xl font-black text-text-main dark:text-white">55</span>
+</div>
+<h4 class="font-bold text-text-main dark:text-white mb-2">Portfolio</h4>
+<div class="w-full bg-gray-100 dark:bg-gray-700 rounded-full h-2 mb-1">
+<div class="bg-red-500 h-2 rounded-full" style="width: 55%"></div>
+</div>
+<p class="text-xs text-red-600 dark:text-red-400 font-medium text-right">Critical</p>
+</div>
+</div>
+<!-- Analysis Split View -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Strengths -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl p-6 border border-border-light dark:border-border-dark shadow-sm">
+<div class="flex items-center gap-2 mb-5">
+<span class="material-symbols-outlined text-green-600 icon-filled">thumb_up</span>
+<h3 class="text-lg font-bold text-text-main dark:text-white">Your Key Strengths</h3>
+</div>
+<ul class="space-y-4">
+<li class="flex items-start gap-3">
+<div class="mt-0.5 min-w-5 size-5 rounded-full bg-green-100 dark:bg-green-900/50 flex items-center justify-center text-green-600 dark:text-green-400">
+<span class="material-symbols-outlined text-sm font-bold">check</span>
+</div>
+<div>
+<p class="text-sm font-bold text-text-main dark:text-white">Strong collaborative history</p>
+<p class="text-xs text-text-muted mt-0.5">Your behavioral answers indicate high team empathy.</p>
+</div>
+</li>
+<li class="flex items-start gap-3">
+<div class="mt-0.5 min-w-5 size-5 rounded-full bg-green-100 dark:bg-green-900/50 flex items-center justify-center text-green-600 dark:text-green-400">
+<span class="material-symbols-outlined text-sm font-bold">check</span>
+</div>
+<div>
+<p class="text-sm font-bold text-text-main dark:text-white">Clear vocal delivery</p>
+<p class="text-xs text-text-muted mt-0.5">Pacing and tone were excellent during audio tasks.</p>
+</div>
+</li>
+<li class="flex items-start gap-3">
+<div class="mt-0.5 min-w-5 size-5 rounded-full bg-green-100 dark:bg-green-900/50 flex items-center justify-center text-green-600 dark:text-green-400">
+<span class="material-symbols-outlined text-sm font-bold">check</span>
+</div>
+<div>
+<p class="text-sm font-bold text-text-main dark:text-white">Experience Quantification</p>
+<p class="text-xs text-text-muted mt-0.5">Resume includes strong metrics and outcomes.</p>
+</div>
+</li>
+</ul>
+</div>
+<!-- Focus Areas -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl p-6 border border-border-light dark:border-border-dark shadow-sm">
+<div class="flex items-center gap-2 mb-5">
+<span class="material-symbols-outlined text-red-500 icon-filled">priority_high</span>
+<h3 class="text-lg font-bold text-text-main dark:text-white">Focus for Max Impact</h3>
+</div>
+<div class="space-y-3">
+<div class="flex items-center justify-between p-3 rounded-lg bg-background-light dark:bg-white/5 border border-border-light dark:border-white/10">
+<div class="flex items-center gap-3">
+<span class="size-2 rounded-full bg-red-500"></span>
+<span class="text-sm font-medium text-text-main dark:text-white">System Design Patterns</span>
+</div>
+<span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-red-100 dark:bg-red-900/40 text-red-600 dark:text-red-400">High Priority</span>
+</div>
+<div class="flex items-center justify-between p-3 rounded-lg bg-background-light dark:bg-white/5 border border-border-light dark:border-white/10">
+<div class="flex items-center gap-3">
+<span class="size-2 rounded-full bg-orange-500"></span>
+<span class="text-sm font-medium text-text-main dark:text-white">Portfolio Case Studies</span>
+</div>
+<span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-orange-100 dark:bg-orange-900/40 text-orange-600 dark:text-orange-400">Med Priority</span>
+</div>
+<div class="flex items-center justify-between p-3 rounded-lg bg-background-light dark:bg-white/5 border border-border-light dark:border-white/10">
+<div class="flex items-center gap-3">
+<span class="size-2 rounded-full bg-yellow-500"></span>
+<span class="text-sm font-medium text-text-main dark:text-white">Salary Negotiation</span>
+</div>
+<span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-yellow-100 dark:bg-yellow-900/40 text-yellow-600 dark:text-yellow-400">Low Priority</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Timeline & Radar (XL: span 4) -->
+<div class="xl:col-span-4 flex flex-col gap-6">
+<!-- Radar Chart Card -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl p-6 border border-border-light dark:border-border-dark shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-lg font-bold text-text-main dark:text-white">Vs. Benchmarks</h3>
+<div class="flex items-center gap-2 text-xs">
+<div class="flex items-center gap-1"><span class="size-2 rounded-full bg-primary"></span>You</div>
+<div class="flex items-center gap-1"><span class="size-2 rounded-full bg-gray-300">Avg</span></div>
+</div>
+</div>
+<div class="relative w-full aspect-square max-w-[300px] mx-auto">
+<!-- Simple SVG Radar Chart Approximation -->
+<svg class="w-full h-full overflow-visible" viewbox="0 0 100 100">
+<!-- Background Grid (Pentagon) -->
+<g class="dark:stroke-gray-700" fill="none" stroke="#e2e8f0" stroke-width="0.5">
+<path d="M50 10 L90 38 L75 85 L25 85 L10 38 Z"></path>
+<path d="M50 25 L75 42 L66 70 L34 70 L25 42 Z"></path>
+<path d="M50 40 L60 47 L56 58 L44 58 L40 47 Z"></path>
+<!-- Axis Lines -->
+<line x1="50" x2="50" y1="50" y2="10"></line>
+<line x1="50" x2="90" y1="50" y2="38"></line>
+<line x1="50" x2="75" y1="50" y2="85"></line>
+<line x1="50" x2="25" y1="50" y2="85"></line>
+<line x1="50" x2="10" y1="50" y2="38"></line>
+</g>
+<!-- Average Shape (Gray) -->
+<path d="M50 20 L80 40 L65 75 L35 75 L20 40 Z" fill="rgba(200, 200, 200, 0.2)" stroke="#94a3b8" stroke-dasharray="2 2" stroke-width="1.5"></path>
+<!-- User Shape (Purple - Based on scores: Tech 65, Res 82, Comm 78, Port 55) -->
+<!-- Coordinates approximated for visual representation -->
+<!-- Tech (Top): 65% -> y=34 -->
+<!-- Resume (Top Right): 82% -> close to edge -->
+<!-- Comm (Bot Right): 78% -->
+<!-- Port (Bot Left): 55% -->
+<!-- Behav (Top Left): 72% -->
+<path d="M50 34 L82 36 L70 78 L34 72 L18 40 Z" fill="rgba(126, 68, 228, 0.2)" stroke="#7e44e4" stroke-width="2"></path>
+<!-- Points -->
+<circle cx="50" cy="34" fill="#7e44e4" r="2"></circle>
+<circle cx="82" cy="36" fill="#7e44e4" r="2"></circle>
+<circle cx="70" cy="78" fill="#7e44e4" r="2"></circle>
+<circle cx="34" cy="72" fill="#7e44e4" r="2"></circle>
+<circle cx="18" cy="40" fill="#7e44e4" r="2"></circle>
+</svg>
+<!-- Labels -->
+<div class="absolute inset-0 pointer-events-none text-[10px] font-bold text-text-muted">
+<span class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1">Tech</span>
+<span class="absolute top-[30%] right-0 translate-x-2">Resume</span>
+<span class="absolute bottom-[10%] right-[10%] translate-y-1">Comm</span>
+<span class="absolute bottom-[10%] left-[10%] translate-y-1">Port</span>
+<span class="absolute top-[30%] left-0 -translate-x-3">Behav</span>
+</div>
+</div>
+</div>
+<!-- Timeline Widget -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl p-6 border border-border-light dark:border-border-dark shadow-sm flex-1">
+<h3 class="text-lg font-bold text-text-main dark:text-white mb-6">Path to Interview-Ready</h3>
+<div class="relative pl-4 border-l-2 border-border-light dark:border-border-dark space-y-8">
+<!-- Item 1 -->
+<div class="relative">
+<div class="absolute -left-[21px] top-1 size-3 rounded-full bg-primary ring-4 ring-background-light dark:ring-background-dark"></div>
+<div class="flex flex-col gap-1">
+<span class="text-xs font-bold text-primary uppercase tracking-wider">Week 1</span>
+<h4 class="font-bold text-text-main dark:text-white">Foundation Repair</h4>
+<p class="text-sm text-text-muted">Fix resume formatting &amp; GitHub cleanup.</p>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="relative">
+<div class="absolute -left-[21px] top-1 size-3 rounded-full bg-gray-300 dark:bg-gray-600 ring-4 ring-background-light dark:ring-background-dark"></div>
+<div class="flex flex-col gap-1">
+<span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Week 2</span>
+<h4 class="font-bold text-text-main dark:text-white">Technical Deep Dive</h4>
+<p class="text-sm text-text-muted">Master System Design basics &amp; LeetCode medium.</p>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="relative">
+<div class="absolute -left-[21px] top-1 size-3 rounded-full bg-gray-300 dark:bg-gray-600 ring-4 ring-background-light dark:ring-background-dark"></div>
+<div class="flex flex-col gap-1">
+<span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Week 3</span>
+<h4 class="font-bold text-text-main dark:text-white">Mock Interviews</h4>
+<p class="text-sm text-text-muted">3 peer mocks focused on communication.</p>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="relative">
+<div class="absolute -left-[21px] top-1 size-3 rounded-full bg-gray-300 dark:bg-gray-600 ring-4 ring-background-light dark:ring-background-dark"></div>
+<div class="flex flex-col gap-1">
+<span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Week 4</span>
+<h4 class="font-bold text-text-main dark:text-white">Final Polish</h4>
+<p class="text-sm text-text-muted">Behavioral stories refinement &amp; rest.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Resources Section -->
+<section class="mt-4">
+<div class="flex items-center justify-between mb-6">
+<h3 class="text-2xl font-bold text-text-main dark:text-white">Recommended Resources</h3>
+<a class="text-primary font-bold text-sm hover:underline" href="#">View All</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
+<!-- Resource Card 1 -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl border border-border-light dark:border-border-dark overflow-hidden group cursor-pointer hover:border-primary/50 transition-colors">
+<div class="h-24 bg-gray-200 w-full bg-cover bg-center" data-alt="Code editor screen showing complex algorithms" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDYmzjZnqEtJipZfVcUzQNTJApO6BZ75RhY2Fe9qzfnlCbeoaZuxAutteRcnTzPQB4wZNzI5lwK6uGag7w_jXL-uwZSbjsbJV4_9-2j_iFQmaSYYO8osmNvEiZx5tYVsH6ByvG0NHg14PEThHDVSNOe5gtdbYrRQ09PmuNYEeIEfwNdeK7XJscJggXjdfwWGVCaIR2_EFNF2sPFzNTxJHKnL7-j_dzApgTUTaLhNfEn-tqg-z3WbJZlPBwJndI1VuFBInRwWiLbLio");'></div>
+<div class="p-4 flex flex-col gap-2">
+<span class="text-[10px] font-bold uppercase text-orange-600 tracking-wider">Technical</span>
+<h4 class="font-bold text-text-main dark:text-white text-sm leading-tight group-hover:text-primary transition-colors">Mastering DSA Patterns</h4>
+<div class="mt-2 flex items-center text-xs font-medium text-text-muted">
+<span class="material-symbols-outlined text-sm mr-1">schedule</span> 4h 20m
+                        </div>
+</div>
+</div>
+<!-- Resource Card 2 -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl border border-border-light dark:border-border-dark overflow-hidden group cursor-pointer hover:border-primary/50 transition-colors">
+<div class="h-24 bg-gray-200 w-full bg-cover bg-center" data-alt="Paper resume with glasses and pen on desk" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDKULmo_iSWkh8sJcJd_3eLShkvjMRKXh5cGn8ghENG3LOmNxnNAYpFpQPjEnJlv01w3-KP7kqU7tddHwI5JyRrrBSgsBDhDJ8BUyodsWV73dEsD5nLok7Z0KICZAOeOhdwzt3qBAI9IpGqMie-LgId4DCPAuxIwzyk1E0Acootf9FpKsRE7O8St7Ji2wFvbjNYGT4X_IGfd2MohqpZR77NQmfiqCNaD3cQBYSR3VpxHfKOzZkNixgp8QbEylvNN5DV1cNHx2WaY2s");'></div>
+<div class="p-4 flex flex-col gap-2">
+<span class="text-[10px] font-bold uppercase text-green-600 tracking-wider">Resume</span>
+<h4 class="font-bold text-text-main dark:text-white text-sm leading-tight group-hover:text-primary transition-colors">ATS Optimization Guide</h4>
+<div class="mt-2 flex items-center text-xs font-medium text-text-muted">
+<span class="material-symbols-outlined text-sm mr-1">article</span> 15 min read
+                        </div>
+</div>
+</div>
+<!-- Resource Card 3 -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl border border-border-light dark:border-border-dark overflow-hidden group cursor-pointer hover:border-primary/50 transition-colors">
+<div class="h-24 bg-gray-200 w-full bg-cover bg-center" data-alt="Group of people collaborating in office" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAARedqWJ9-AAtSaucdQROCigvo0eGf8_6xzSvJC0BEreSykCpm7AT8jvvjhi5NFIUpf3zii8FAoHvmEotM7Ju_EUMzx5kbyzkNHBhvS-0AGdXuoc-w7ohvZhI9tnBJoLMWasZwmMRmuKk9g5zodlOA_TeUGg5NZLYqptvVhcY_MYQEFdaKZIgCpXGfYrl62SQ_CiTywMNDI6_Dy0c3lUc6wyb7iX-kudPtB_4POii2kYCQSYkJGuuipzOsZsQ7r4Y2p_CrE4HT0lg");'></div>
+<div class="p-4 flex flex-col gap-2">
+<span class="text-[10px] font-bold uppercase text-teal-600 tracking-wider">Soft Skills</span>
+<h4 class="font-bold text-text-main dark:text-white text-sm leading-tight group-hover:text-primary transition-colors">Storytelling using STAR</h4>
+<div class="mt-2 flex items-center text-xs font-medium text-text-muted">
+<span class="material-symbols-outlined text-sm mr-1">play_circle</span> Video
+                        </div>
+</div>
+</div>
+<!-- Resource Card 4 -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl border border-border-light dark:border-border-dark overflow-hidden group cursor-pointer hover:border-primary/50 transition-colors">
+<div class="h-24 bg-gray-200 w-full bg-cover bg-center" data-alt="Data visualization dashboard on monitor" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDxg7t1UxLkWW2jHlJXvaDurKSwGZAvHRFoX2MJCXS95JV6uFiHQRpJoHAz_ZjJJ_fdt5XzAXKhJj3r10et2zru6fUYxE30ke7G2pO10u1KyDG7DIX-KvuPkeHtau21fcQ2lcdvbiE6JWA7lUP_XS6Fx5GVBGdIyOdatI0AbmZPypxWZegJ7kUf-Bc0YCTeoBeeK8obLY3K7VRuTHUx9GR5clb80LIrJ2vlzgS_iqbYQ7nh0pdquXCdjUJMsa2gsWk-Qs5QO0UqowA");'></div>
+<div class="p-4 flex flex-col gap-2">
+<span class="text-[10px] font-bold uppercase text-red-600 tracking-wider">Portfolio</span>
+<h4 class="font-bold text-text-main dark:text-white text-sm leading-tight group-hover:text-primary transition-colors">Case Study Template</h4>
+<div class="mt-2 flex items-center text-xs font-medium text-text-muted">
+<span class="material-symbols-outlined text-sm mr-1">download</span> PDF
+                        </div>
+</div>
+</div>
+<!-- Resource Card 5 -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl border border-border-light dark:border-border-dark overflow-hidden group cursor-pointer hover:border-primary/50 transition-colors">
+<div class="h-24 bg-gray-200 w-full bg-cover bg-center" data-alt="Person designing a user interface on tablet" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDgjE-E9-CWg3OES8zDhqLLRsTh2X3aqnbZ_MQW8ACMjflp8c-vYOGiGTEmYaRH1o-Gc-j1JXflvVHmVseo1ZLsWTHXCuJy_pDxdysFLB3WNxby3_Lu-br8FYJvhySAJU5LPJeZy79Ci4CdevQEc4AYO8RRStL-FOc6qfvA3A5ialeaoLtR7xdtZgtsTB71paSH5Fhwhr3qD7oNKAULE-1zNIJlqfGcV3J9kvaV4se4GkBPL4h_8B40W01txV8KU6x6km8lUc7hQw0");'></div>
+<div class="p-4 flex flex-col gap-2">
+<span class="text-[10px] font-bold uppercase text-orange-600 tracking-wider">System Design</span>
+<h4 class="font-bold text-text-main dark:text-white text-sm leading-tight group-hover:text-primary transition-colors">Scalable Architecture</h4>
+<div class="mt-2 flex items-center text-xs font-medium text-text-muted">
+<span class="material-symbols-outlined text-sm mr-1">schedule</span> 1h 10m
+                        </div>
+</div>
+</div>
+<!-- Resource Card 6 -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl border border-border-light dark:border-border-dark overflow-hidden group cursor-pointer hover:border-primary/50 transition-colors">
+<div class="h-24 bg-gray-200 w-full bg-cover bg-center" data-alt="Two people shaking hands in meeting" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAElOxNygQtrn0DAdXKldAXdKll4yp4ecUSiksJtYiSdfzpqu8KUiiF8Ucj-07Peo4sAKRT74X7sqwlcjs4k-cHC234sW0ZMReZc4ZRnoXztaXR82cM7mE8SIcTtN-sFQu_fAA8XxCWJJsZBP-NLFxU-X6v5SzsSaDmBfYb7p-OVQa-K-D3dPzvjSj0n9iMeCf8Dj9OCum3UPx35mCIZ4oehy1z-9LASbEgZQS8Py0D_HCq0LGzy5Rl6DpFl2TlTGnFm_r06ka1V1Q");'></div>
+<div class="p-4 flex flex-col gap-2">
+<span class="text-[10px] font-bold uppercase text-teal-600 tracking-wider">Interview</span>
+<h4 class="font-bold text-text-main dark:text-white text-sm leading-tight group-hover:text-primary transition-colors">Mock Simulator</h4>
+<div class="mt-2 flex items-center text-xs font-medium text-text-muted">
+<span class="material-symbols-outlined text-sm mr-1">joystick</span> Interactive
+                        </div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="mt-12 py-8 bg-surface-light dark:bg-surface-dark border-t border-border-light dark:border-border-dark">
+<div class="max-w-[1400px] mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-text-muted">
+<div>
+                © 2023 AI PrepPulse. All rights reserved.
+            </div>
+<div class="flex gap-6">
+<a class="hover:text-primary" href="#">Privacy Policy</a>
+<a class="hover:text-primary" href="#">Terms of Service</a>
+<a class="hover:text-primary" href="#">Support</a>
+</div>
+</div>
+</footer>
+</body></html>
